@@ -1,4 +1,4 @@
-# django-rest-react-form-using-meta
+# django-react-using-metadata
 
 The main goal of this project is to use django models/serializers to create forms at React level.
 The main advantage is that whenever developer changes the attributes of a model at django level, 
