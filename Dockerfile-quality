@@ -1,0 +1,8 @@
+FROM python:3.7-alpine
+RUN apk update && apk upgrade && apk add git
+RUN pip install pre-commit
+WORKDIR /code
+ADD . /code
+RUN git init . && git stage -f ./*  && pre-commit install-hooks --config .pre-commit-config.yaml
+RUN chmod +x entrypoint.sh
+ENTRYPOINT ["sh",  "entrypoint.sh"]

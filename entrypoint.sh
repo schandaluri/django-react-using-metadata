@@ -26,6 +26,9 @@ case "$1" in
     python manage.py runserver
     gunicorn my_apis.wsgi --bind 0.0.0.0:8000 --workers 4 --access-logfile '-'
   ;;
+  'quality')
+    pre-commit run --all-files
+  ;;
   'bash')
     bash
   ;;

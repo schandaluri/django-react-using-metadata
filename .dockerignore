@@ -1,5 +1,6 @@
 .git
 .idea
+my-app/.idea
 static
 **/__pycache__
 */*.log

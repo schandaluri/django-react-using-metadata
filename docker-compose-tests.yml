@@ -5,3 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile-tests
     command: tests
+  quality:
+    build:
+      context: .
+      dockerfile: Dockerfile-quality
+    command: quality
