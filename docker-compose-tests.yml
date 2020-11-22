@@ -5,6 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile-tests
     command: tests
+    volumes:
+      - ${TEST_VOLUME-./test-reports/}:/test-reports/
+      - ${COVERAGE_VOLUME-./coverage-reports/}:/coverage-reports/
   quality:
     build:
       context: .
