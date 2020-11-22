@@ -10,7 +10,7 @@ backup
 .coverage
 **/*.pyc
 test-reports
-my-app/coverage-reports
+backend/coverage-reports
 node_modules
-my-app/build
+frontend/build
 venv

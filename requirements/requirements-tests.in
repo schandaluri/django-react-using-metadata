@@ -1,0 +1,5 @@
+factory-boy
+pytest>=6.1.2
+pytest-django>=4.1.0
+pytest-env
+pytest-cov>=2.10.1

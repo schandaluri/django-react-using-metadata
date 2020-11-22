@@ -23,7 +23,7 @@ case "$1" in
            --cov=. --cov-config .coveragerc
   ;;
   'web')
-    python manage.py runserver
+    python manage.py migrate
     gunicorn my_apis.wsgi --bind 0.0.0.0:8000 --workers 4 --access-logfile '-'
   ;;
   'quality')

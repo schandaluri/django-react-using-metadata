@@ -2,3 +2,6 @@ venv/
 .idea/
 static/
 db.sqlite3
+/coverage-reports/
+/test-reports/
+/frontend/node_modules/

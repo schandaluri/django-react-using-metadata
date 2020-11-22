@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -9,13 +9,22 @@ from rest_framework.exceptions import status
 from common import serializers
 
 
+def home(request):
+    response = HttpResponse('No Frontend')
+    try:
+        response = render(request, "index.html")
+    except Exception as e:  # noqa
+        pass
+    return response
+
+
 def handler_404(request):
     if request.is_ajax():
         return Response(
             {"status": 404, "message": "Not found"}, status=status.HTTP_404_NOT_FOUND
         )
     else:
-        return render(request, "index.html")
+        return home(request)
 
 
 class BaseModelViewSet(ModelViewSet):

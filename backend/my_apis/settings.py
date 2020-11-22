@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "my-app/build")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend/build")]
 
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": [
