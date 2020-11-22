@@ -22,7 +22,7 @@ node {
           allowMissing: false,
           alwaysLinkToLastBuild: true,
           keepAll: true,
-          reportDir: 'coverage-reports',
+          reportDir: '${env.WORKSPACE}/coverage-reports',
           reportFiles: 'index.html',
           reportName: 'Coverage report'
         ])
