@@ -6,7 +6,6 @@ from rest_framework import status
 
 class BaseJSONRenderer(JSONRenderer):
     def render(self, data, accepted_media_type=None, renderer_context=None):
-        request = renderer_context["request"]
         response = renderer_context["response"]
         _data = OrderedDict()
         # _data['path'] = request.path
