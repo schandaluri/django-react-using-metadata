@@ -1,0 +1,13 @@
+[run]
+omit =
+    */tests/*
+    */migrations/*
+    node_modules/*
+    manage.py
+    catalog_project/*
+    */apps.py
+    common/jsonutils.py
+    control/management/commands/*
+    performance_tests/*
+
+branch = True

@@ -1,0 +1,15 @@
+.git
+.idea
+static
+**/__pycache__
+*/*.log
+backup
+*/*.sql
+.cache
+.coverage
+**/*.pyc
+test-reports
+my-app/coverage-reports
+node_modules
+my-app/build
+venv

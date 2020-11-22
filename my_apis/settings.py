@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+from my_apis.config import ConfigUtil
+
+
+consul_utils = ConfigUtil()
+config = consul_utils.get_config_by_path('config')
+logback = consul_utils.get_config_by_path('logback')
+django_config = config['django']
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,14 +27,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!n5=t67$8+80xhhylg%00m_o)o3j2rr6j9%b)&8k)%kc$#!d3+'
+SECRET_KEY = django_config['django-secret-key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = django_config.get('debug', False)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = django_config.get('allowed-hosts', ['*'])
 
-
+LOGGING = logback
 # Application definition
 
 INSTALLED_APPS = [

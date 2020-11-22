@@ -1,0 +1,4 @@
+django:
+  debug: true
+  allowed-hosts: [ "*" ]
+  django-secret-key: "!n5=t67$8+80xhhylg%00m_o)o3j2rr6j9%b)&8k)%kc$#!d3+"

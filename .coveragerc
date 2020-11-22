@@ -1,0 +1,9 @@
+[run]
+omit =
+    */tests/*
+    */migrations/*
+    node_modules/*
+    manage.py
+    my-app/*
+
+branch = True

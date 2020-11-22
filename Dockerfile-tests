@@ -1,0 +1,11 @@
+FROM python:3.7-alpine
+RUN apk update && apk upgrade && apk add bash
+ADD requirements.txt /code/requirements.txt
+RUN pip install -r /code/requirements.txt
+WORKDIR /code
+ADD . /code
+RUN mkdir /code/my-app/build
+RUN touch /code/my-app/build/index.html
+RUN python manage.py collectstatic --noinput -c
+RUN chmod +x entrypoint.sh
+ENTRYPOINT ["sh",  "entrypoint.sh"]

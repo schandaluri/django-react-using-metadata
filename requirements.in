@@ -1,3 +1,4 @@
+PyYAML
 Django==3.0
 djangorestframework
 factory_boy
@@ -6,3 +7,8 @@ django-restql
 django-cors-headers
 django-react-templatetags
 whitenoise
+factory-boy
+pytest>=6.1.2
+pytest-django>=4.1.0
+pytest-env
+pytest-cov>=2.10.1

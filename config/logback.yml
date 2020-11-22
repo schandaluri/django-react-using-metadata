@@ -1,0 +1,40 @@
+version: 1  # Python logging version. Do not modify!
+
+# We'll patch the handler and loglevel rather than disable
+disable_existing_loggers: false
+
+handlers:
+  console:
+    level: DEBUG
+    class: my_apis.logging.ConsoleHandler
+
+loggers:
+
+  # APPS
+  common:
+    handlers: [console]
+    level: INFO
+    propagate: false
+
+  # Third-party
+  django:
+    handlers: [console]
+    level: INFO
+    propagate: false
+
+  # gunicorn is responsible for access and worker logs
+  gunicorn:
+    handlers: [console]
+    level: INFO
+    propagate: false
+
+  root:
+    handlers: [console]
+    level: INFO
+    propagate: false
+
+  # "All the rest"
+  '':
+    handlers: [console]
+    level: INFO
+    propagate: false
