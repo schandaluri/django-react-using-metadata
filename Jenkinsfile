@@ -8,8 +8,8 @@ node {
 
       stage("static code"){
         sh "pre-commit run --all-files"
-        # sh "docker-compose -f docker-compose-tests.yml build quality"
-        # sh "docker-compose -f docker-compose-tests.yml run --rm quality"
+        // sh "docker-compose -f docker-compose-tests.yml build quality"
+        // sh "docker-compose -f docker-compose-tests.yml run --rm quality"
       }
 
       stage ("unit test"){
