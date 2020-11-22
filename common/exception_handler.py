@@ -15,20 +15,20 @@ def custom_exception_handler(exc, context):
     headers = {}
 
     if isinstance(exc, exceptions.APIException):
-        if getattr(exc, 'auth_header', None):
-            headers['WWW-Authenticate'] = exc.auth_header
-        if getattr(exc, 'wait', None):
-            headers['Retry-After'] = '%d' % exc.wait
+        if getattr(exc, "auth_header", None):
+            headers["WWW-Authenticate"] = exc.auth_header
+        if getattr(exc, "wait", None):
+            headers["Retry-After"] = "%d" % exc.wait
 
         if isinstance(exc.detail, (list, dict)):
             data = exc.detail
         else:
-            data = {'detail': exc.detail}
+            data = {"detail": exc.detail}
 
         set_rollback()
         status_code = exc.status_code
     else:
         status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
-        data = {'detail': 'Something went wrong'}
+        data = {"detail": "Something went wrong"}
 
     return Response(data, status=status_code, headers=headers)

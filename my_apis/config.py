@@ -5,6 +5,7 @@ from functools import partial
 from collections import defaultdict
 
 import yaml
+
 try:
     from yaml import CLoader as Loader
 except ImportError:
@@ -19,7 +20,7 @@ class ConfigUtil:
     }
 
     def __init__(self, config_dir=None):
-        self.config_dir = os.getenv('CONFIG_DIR_PATH', config_dir or 'config')
+        self.config_dir = os.getenv("CONFIG_DIR_PATH", config_dir or "config")
 
     def get_config_by_path(self, key):
         settings = defaultdict(dict)

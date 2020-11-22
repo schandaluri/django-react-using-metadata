@@ -1,18 +1,18 @@
 # django-react-using-metadata
 
 The main goal of this project is to use django models/serializers to create forms at React level.
-The main advantage is that whenever developer changes the attributes of a model at django level, 
+The main advantage is that whenever developer changes the attributes of a model at django level,
 those will be automatically update at React. Generally developer need to update at two places
 (Django and React). With this approach no need to update at React. For example,
  if developer update the max length of first name at django level,
 it will automatically update at first name field in React.
 
-Here React uses the django endpoint to get the form json which has configuration of fields 
-like type, required, max_length , readonly .... React uses this information to render the 
+Here React uses the django endpoint to get the form json which has configuration of fields
+like type, required, max_length , readonly .... React uses this information to render the
 appropriate field.
 
 JSON example:
-```json spaces=2 
+```json spaces=2
 {
   "username": {
     "type":"string",
@@ -59,4 +59,3 @@ docker-compose up
 Access application/api at 8000
 
 Further info contact - srikanth14895@gmail.com
-

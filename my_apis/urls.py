@@ -19,15 +19,15 @@ from django.views.generic.base import TemplateView
 from django.conf import settings
 from common.views import handler_404
 
-handler500 = 'rest_framework.exceptions.server_error'
+handler500 = "rest_framework.exceptions.server_error"
 
-handler400 = 'rest_framework.exceptions.bad_request'
+handler400 = "rest_framework.exceptions.bad_request"
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='index.html'), name='home'),
-    path('admin/', admin.site.urls),
-    path('api/', include('common.urls')),
+    path("", TemplateView.as_view(template_name="index.html"), name="home"),
+    path("admin/", admin.site.urls),
+    path("api/", include("common.urls")),
 ]
 
 if not settings.DEBUG:
-    urlpatterns.append(re_path(r'.*', handler_404))
+    urlpatterns.append(re_path(r".*", handler_404))
